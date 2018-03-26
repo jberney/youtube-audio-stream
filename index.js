@@ -30,8 +30,10 @@ function streamify (uri, opt) {
 
   var ffmpeg = new FFmpeg(video)
   opt.applyOptions(ffmpeg)
-  var output = ffmpeg
+  var ffmpegStream = ffmpeg
     .format(opt.audioFormat)
+  stream.ffmpegStream = ffmpegStream;
+  var output = ffmpegStream
     .pipe(stream)
 
   video.on('info', stream.emit.bind(stream, 'info'))
