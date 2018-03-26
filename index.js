@@ -32,7 +32,7 @@ function streamify (uri, opt) {
   opt.applyOptions(ffmpeg)
   var ffmpegStream = ffmpeg
     .format(opt.audioFormat)
-  stream.ffmpegStream = ffmpegStream;
+  stream.ffmpegStream = ffmpegStream
   var output = ffmpegStream
     .pipe(stream)
 
